@@ -35,19 +35,32 @@ def make_text(chains):
 
     # Step 1: Choose random key from chains
     current_key = random.choice(chains.keys())
-    print current_key
+    # print current_key
     # Step 2: Put words of random key into a list
+    word_list.append(current_key)
+   
+    print word_list
     # sub-Step 2: We should see a list that has two words
+    # print word_list
     # sub-sub-Step 2: Two words should be the word from tuple
     # Step 3: With two words in word list, use a while loop, 
-            # probably key in dictionary. 
+            # probably key in dictionary.
+    current_key_value = (chain_dict[value])
+    
+    while current_key in chain_dict:
+        word_list.append(current_key_value)
+        new_key = (current_key[1],current_key_value)
+        current_key = new_key
+     
+        print current_key
+
     # Step 4: While in while loop, choose a value for the key
     # while current_key in chains 
     # Step 5: Place value, append to word list
     # Step 6: Make a new key that will be the second word of the current key for our next value.
     # current_key = (current_key[1], value) 
     print word_list
-    return "Here's some random text."
+    return str(word_list)
 
 
 # # Change this to read input_text from a file, deciding which file should
